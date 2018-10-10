@@ -83,8 +83,8 @@ class Cloud(object):
         self.water=water
         if(water>capacity):
             self.water=self.capacity
-        self.remembercapacity=0
-        self.rememberwater=0
+        self.remembercapacity=capacity
+        self.rememberwater=water
 
     def rain(self, rain_amount):
         """
@@ -171,6 +171,7 @@ class Cloud(object):
         # ---------------------------------------------------------------------
         # TODO: 4. Implement and test this method.
         # ---------------------------------------------------------------------
+
         plus=self.rain(self.water)
         return plus
 
