@@ -25,10 +25,10 @@ def main():
     print('Un-comment the calls in MAIN one by one')
     print(' to run the testing code as you complete the TODOs.')
 
-    # run_test_init()
-    # run_test_rain()
+    run_test_init()
+    run_test_rain()
     run_test_get_total_rain_amount()
-    # run_test_merge_cloud()
+    run_test_merge_cloud()
 
 
 ###############################################################################
@@ -78,10 +78,13 @@ class Cloud(object):
         # ---------------------------------------------------------------------
         # Done: 2. Implement and test this method.
         # ---------------------------------------------------------------------
+
         self.capacity=capacity
         self.water=water
         if(water>capacity):
             self.water=self.capacity
+        self.remembercapacity=0
+        self.rememberwater=0
 
     def rain(self, rain_amount):
         """
@@ -135,6 +138,7 @@ class Cloud(object):
         return rain_amount
 
 
+
     def get_total_rain_amount(self):
         """
         What comes in:
@@ -167,8 +171,9 @@ class Cloud(object):
         # ---------------------------------------------------------------------
         # TODO: 4. Implement and test this method.
         # ---------------------------------------------------------------------
+        plus=self.rain(self.water)
+        return plus
 
-        # return total
 
 
 
@@ -203,6 +208,20 @@ class Cloud(object):
         # ---------------------------------------------------------------------
         # TODO: 5. Implement and test this method.
         # ---------------------------------------------------------------------
+        # newcloud=self.water+another_cloud.water
+        # newcapacity=self.capacity+another_cloud.capacity
+        # return Cloud(newcloud,newcapacity)
+        #
+        self.capacity=another_cloud.capacity
+        self.water=another_cloud.water
+        newcapacity = self.capacity + self.capacity
+        newwater=self.water+self.water
+
+        return newcapacity,newwater
+
+
+
+
 
 
 ###############################################################################

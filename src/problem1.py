@@ -48,7 +48,7 @@ def main():
     print('Un-comment the calls in MAIN one by one')
     print(' to run the testing code as you complete the TODOs.')
 
-    # run_test_problem1a()
+    run_test_problem1a()
     run_test_problem1b()
     run_test_problem1c()
     run_test_problem1d()
@@ -812,12 +812,12 @@ def problem1d(strings):
     #     if(strings[k]is is_prime(len(strings))):
     #         return -1
     # return strings[k]
-    # for k in range(len(strings)):
-    #     if(strings[k]==is_prime(len(strings))):
-    #         pass
-    #     return strings[k]
-    # else:
-    #     return -1
+    for k in range(len(strings)):
+        if(strings[k]==is_prime(len(strings))):
+            pass
+        return strings[k]
+    else:
+        return -1
 
 
 
