@@ -5,8 +5,8 @@ This module contains:
   -- Methods you must implement for the Cloud object
   
 Authors: David Mutchler, Dave Fisher, Matt Boutell, their colleagues,
-         and PUT_YOUR_NAME_HERE.  October 2018.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Yuanning Zuo.  October 2018.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import time
 from numbers import Number
@@ -27,7 +27,7 @@ def main():
 
     # run_test_init()
     # run_test_rain()
-    # run_test_get_total_rain_amount()
+    run_test_get_total_rain_amount()
     # run_test_merge_cloud()
 
 
@@ -76,8 +76,12 @@ class Cloud(object):
           :type water: int | float
         """
         # ---------------------------------------------------------------------
-        # TODO: 2. Implement and test this method.
+        # Done: 2. Implement and test this method.
         # ---------------------------------------------------------------------
+        self.capacity=capacity
+        self.water=water
+        if(water>capacity):
+            self.water=self.capacity
 
     def rain(self, rain_amount):
         """
@@ -124,6 +128,11 @@ class Cloud(object):
         # ---------------------------------------------------------------------
         # TODO: 3. Implement and test this method.
         # ---------------------------------------------------------------------
+        if(rain_amount>self.water):
+
+
+            return self.water
+        return rain_amount
 
 
     def get_total_rain_amount(self):
@@ -158,6 +167,9 @@ class Cloud(object):
         # ---------------------------------------------------------------------
         # TODO: 4. Implement and test this method.
         # ---------------------------------------------------------------------
+
+        # return total
+
 
 
     def merge_cloud(self, another_cloud):

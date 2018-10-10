@@ -2,8 +2,8 @@
 Exam 2, problem 2.
 
 Authors: Dave Fisher, David Mutchler, Matt Boutell, their colleagues,
-         and PUT_YOUR_NAME_HERE.  October 2018.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Yuanning Zuo.  October 2018.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import math
 import time
@@ -109,8 +109,8 @@ def main():
     print('Un-comment the calls in MAIN one by one')
     print(' to run the testing code as you complete the TODOs.')
 
-    # run_test_problem2a()
-    # run_test_problem2b()
+    run_test_problem2a()
+    run_test_problem2b()
 
 
 def run_test_problem2a():
@@ -196,9 +196,26 @@ def problem2a(triangle):
       :rtype: Triangle
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #          Tests have been written for you (above).
-    # -------------------------------------------------------------------------
+    #  -------------------------------------------------------------------------
+
+
+    # triangle.newtriangle=(triangle.a*2)
+    # triangle.newtriangle1=(triangle.b*2)
+    # triangle.newtriangle2=(triangle.c*2)
+    # triangle.atriangle=(triangle.newtriangle,triangle.newtriangle1,triangle.newtriangle2)
+    # return triangle
+    triangle.x=triangle.a*2
+    triangle.z=triangle.b*2
+    triangle.n=triangle.c*2
+
+    return triangle.x,triangle.z,triangle.n
+
+
+
+
+
 
 
 def run_test_problem2b():
@@ -354,10 +371,27 @@ def problem2b(triangles):
       :rtype: int | float
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # IMPORTANT: See the HINT just before the DEF of this function.
     # -------------------------------------------------------------------------
+
+    sum=0
+    for k in range(len(triangles)):
+        s=(triangles[k].a+triangles[k].b+triangles[k].c)/2
+        t=math.sqrt(s*(s-triangles[k].a)*(s-triangles[k].b)*(s-triangles[k].c))
+        sum=sum+t
+        # formula=((triangles[k].a+triangles[k].b+triangles[k].c)/2)+((triangles[k].a+triangles[k].c+triangles[k].b))/2
+
+        # print(triangles[k].a)
+        # print(triangles[k].b)
+        # print(triangles[k].c)
+
+        # sum=sum+formula
+    return sum
+
+
+
 
 
 ###############################################################################
